@@ -1,6 +1,5 @@
 ## ICAM (Instance-Conditioned Adaptation Model)
 
----
 
 This repository contains the code implementation of paper [Instance-Conditioned Adaptation for Large-scale Generalization of Neural Combinatorial Optimization](https://arxiv.org/abs/2405.01906). In this paper, we propose a powerful RL-based constructive method called ICAM. When facing diverse geometric structures and patterns of instances across different scales, ICAM can effectively capture the instance-specific features (i.e., distance and scale) via the proposed instance-conditioned adaptation function. To make the model better aware of instance-specific information, we incorporate these features into the whole solution construction process (i.e., embedding, attention, and compatibility) via a powerful yet low-complexity instance-conditioned adaptation attention mechanism. Therefore, ICAM can directly generate promising solutions for instances across quite different scales, which improves the large-scale generalization performance for RL-based NCOs.
 
