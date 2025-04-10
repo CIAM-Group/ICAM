@@ -35,7 +35,7 @@ The code for each CO problem defaults to retaining the parameters in training th
 ### Model & Data
 
 - Training
-  - ICAM is trained using reinforcement learning, and the random data generation method is demonstrated in ten files, such as ICAM_TSP/TSProblemDef.py and ICAM_CVRP/CVRProblemDef.py.
+  - ICAM is trained using reinforcement learning, and the random data generation method is demonstrated in three files, such as ICAM_TSP/TSProblemDef.py and ICAM_CVRP/CVRProblemDef.py.
  
 - Inference
 
