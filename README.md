@@ -9,9 +9,10 @@ This repository contains the code implementation of paper [Instance-Conditioned 
 
 ### Dependencies
 ```bash
-Python=3.8.5
+Python>=3.8
 torch==2.0.1
 numpy==1.24.4
+tqdm
 ```
 We don't use any hard-to-install packages. If any package is missing, just install it following the prompts.
 
@@ -24,20 +25,34 @@ We provide the official instructions to install torch 2.0.1 with CUDA 11.7:
 # CUDA 11.7
 pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 ```
+
 ### Implementation
 
 This project's structure is clear, the codes are based on .py files, and they should be easy to read, understand, and run.
+
+The code for each CO problem defaults to retaining the parameters in training the pre-trained model and the parameters used for testing. Please refer to our paper for training and testing settings.
+
+### Model & Data
+
+- Training
+  - ICAM is trained using reinforcement learning, and the random data generation method is demonstrated in ten files, such as ICAM_TSP/TSProblemDef.py and ICAM_CVRP/CVRProblemDef.py.
+ 
+- Inference
+
+  - Models: All pre-trained models are placed in `./pretrained`.
+
+  - Data: Please download test sets from Google Drive https://drive.google.com/drive/folders/1B2qBj8rD5apvxaWuBsjOeBStOa_bMQu9?usp=sharing, and place them in `./data`. 
 
 ### Further Improvement
 
 We have verified the legality of the corresponding solutions for each problem. We will continue to strive to improve its clarity and welcome any minor errors in the code implementation.
 
-If there are any issues in running or re-implementing the code, please contact the author Changliang Zhou via email (zhoucl2022@mail.sustech.edu.cn) in a timely manner. 
+🐛 If there are any issues in running or re-implementing the code, please contact the author Changliang Zhou via email (zhoucl2022@mail.sustech.edu.cn) in a timely manner. 
 
 
 ## Citation
 
-**If this repository is helpful for your research, please cite our paper:<br />**
+🤩🤩🤩 **If this repository is helpful for your research, please cite our paper:<br />**
 
 ```
 @article{zhou2024instance,
