@@ -66,12 +66,12 @@ class CVRPTrainer:
 
         file_name_100 = f'../data/cvrp/vrp100_test_lkh.txt'
         self.saved_dataset_100, self.optimal_score_100 = get_saved_data(file_name_100, 10000, self.device)
-        self.logger.info('Successfully load {0} TSP{1} instances, optimal: {2:.4f}'.format(
+        self.logger.info('Successfully load {0} CVRP{1} instances, optimal: {2:.4f}'.format(
             self.saved_dataset_100['node_xy'].shape[0], self.saved_dataset_100['node_xy'].shape[1], self.optimal_score_100))
 
         file_name_1000 = f'../data/cvrp/vrp1000_test_lkh.txt'
         self.saved_dataset_1000, self.optimal_score_1000 = get_saved_data(file_name_1000, 128, self.device)
-        self.logger.info('Successfully load {0} TSP{1} instances, optimal: {2:.4f}'.format(
+        self.logger.info('Successfully load {0} CVRP{1} instances, optimal: {2:.4f}'.format(
             self.saved_dataset_1000['node_xy'].shape[0], self.saved_dataset_1000['node_xy'].shape[1],self.optimal_score_1000))
 
     def run(self):
