@@ -3,8 +3,6 @@
 
 This repository contains the code implementation of paper [Instance-Conditioned Adaptation for Large-scale Generalization of Neural Combinatorial Optimization](https://arxiv.org/abs/2405.01906). In this paper, we propose a powerful RL-based constructive method called ICAM. When facing diverse geometric structures and patterns of instances across different scales, ICAM can effectively capture the instance-specific features (i.e., distance and scale) via the proposed instance-conditioned adaptation function. To make the model better aware of instance-specific information, we incorporate these features into the whole solution construction process (i.e., embedding, attention, and compatibility) via a powerful yet low-complexity instance-conditioned adaptation attention mechanism. Therefore, ICAM can directly generate promising solutions for instances across quite different scales, which improves the large-scale generalization performance for RL-based NCOs.
 
-**You can also find the latest version of our paper at [OpenReview](https://openreview.net/forum?id=gyTkfVYL45).**
-
 ![ICAM](ICAM.png)
 
 ### Dependencies
@@ -20,7 +18,7 @@ We recommend using PyTorch 2.x for better GPU memory utilization and training (t
 
 Please refer to the official instructions [Previous PyTorch Versions](https://pytorch.org/get-started/previous-versions/) to install the correct version of PyTorch, which is compatible with your CUDA version.
 
-We provide the official instructions to install torch 2.0.1 with CUDA 11.7:
+We provide the official instructions to install Torch 2.0.1 with CUDA 11.7:
 ```bash
 # CUDA 11.7
 pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
