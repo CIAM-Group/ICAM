@@ -1,7 +1,7 @@
 ## ICAM (Instance-Conditioned Adaptation Model)
 
 
-This repository contains the code implementation of paper [Instance-Conditioned Adaptation for Large-scale Generalization of Neural Routing Solver](https://arxiv.org/abs/2405.01906). In this paper, we propose a powerful RL-based constructive method called ICAM. When facing diverse geometric structures and patterns of instances across different scales, ICAM can effectively capture the instance-specific features (i.e., distance and scale) via the proposed instance-conditioned adaptation function. To make the model better aware of instance-specific information, we incorporate these features into the whole solution construction process (i.e., embedding, attention, and compatibility) via a powerful yet low-complexity instance-conditioned adaptation attention mechanism. Therefore, ICAM can directly generate promising solutions for instances across quite different scales, which improves the large-scale generalization performance for RL-based NCOs.
+This repository contains the code implementation of the paper [Instance-Conditioned Adaptation for Large-scale Generalization of Neural Routing Solver](https://arxiv.org/abs/2405.01906). In this paper, we propose a powerful RL-based constructive method called ICAM. When facing diverse geometric structures and patterns of instances across different scales, ICAM can effectively capture the instance-specific features (i.e., distance and scale) via the proposed instance-conditioned adaptation function. To make the model better aware of instance-specific information, we incorporate these features into the whole solution construction process (i.e., embedding, attention, and compatibility) via a powerful yet low-complexity instance-conditioned adaptation attention mechanism. Therefore, ICAM can directly generate promising solutions for instances across quite different scales, which improves the large-scale generalization performance for RL-based NCOs.
 
 ![ICAM](ICAM.png)
 
@@ -14,7 +14,7 @@ tqdm
 ```
 We don't use any hard-to-install packages. If any package is missing, just install it following the prompts.
 
-We recommend using PyTorch 2.x for better GPU memory utilization and training (testing) acceleration. This code is trained and tested with PyTorch 2.0.1 (CUDA version 11.7). If you are using PyTorch 1.x, you may encounter OOM (i.e., Out Of Memory) issues even with the same training configuration (unchanged batch_size). For more characteristics of PyTorch 2.x, please refer to the [PyTorch 2.x](https://pytorch.org/get-started/pytorch-2.0/).
+We recommend using PyTorch 2.x for better GPU memory utilization and training (testing) acceleration. This code is trained and tested with PyTorch 2.0.1 (CUDA version 11.7). If you are using PyTorch 1.x, you may encounter OOM (i.e., Out of Memory) issues even with the same training configuration (unchanged batch size). For more characteristics of PyTorch 2.x, please refer to the [PyTorch 2.x](https://pytorch.org/get-started/pytorch-2.0/).
 
 Please refer to the official instructions [Previous PyTorch Versions](https://pytorch.org/get-started/previous-versions/) to install the correct version of PyTorch, which is compatible with your CUDA version.
 
@@ -54,7 +54,7 @@ We have verified the legality of the corresponding solutions for each problem. W
 
 ```
 @article{zhou2024instance,
-  title={Instance-conditioned adaptation for large-scale generalization of neural combinatorial optimization},
+  title={Instance-Conditioned Adaptation for Large-scale Generalization of Neural Routing Solver},
   author={Zhou, Changliang and Lin, Xi and Wang, Zhenkun and Tong, Xialiang and Yuan, Mingxuan and Zhang, Qingfu},
   journal={arXiv preprint arXiv:2405.01906},
   year={2024}
@@ -69,3 +69,4 @@ Thank them for their implementations.
 ## Copyright (c) 2025 CIAM Group
 
 **The code can only be used for non-commercial purposes. Please contact the authors if you want to use this code for business matters.**
+
