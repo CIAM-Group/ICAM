@@ -24,22 +24,66 @@ We provide the official instructions to install Torch 2.0.1 with CUDA 11.7:
 pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 ```
 
-### Implementation
+### How to Run
 
-This project's structure is clear, the codes are based on .py files, and they should be easy to read, understand, and run.
+Note: The project's structure is clear, with code based on .py files that should be easy to read, understand, and run.
 
-The code for each CO problem defaults to retaining the parameters in training the pre-trained model and the parameters used for testing. Please refer to our paper for training and testing settings.
+The code for each CO problem defaults to retaining the parameters used for training the pre-trained model and those used for testing. Please refer to our paper for training and testing settings.
 
-### Model & Data
+To run the code and further verify the efficiency of our method, please follow these steps:
 
-- Training
-  - ICAM is trained using reinforcement learning, and the random data generation method is demonstrated in three files, such as ICAM_TSP/TSProblemDef.py and ICAM_CVRP/CVRProblemDef.py.
- 
-- Inference
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/CIAM-Group/ICAM.git
+cd ICAM
+```
 
-  - Models: All pre-trained models are placed in `./pretrained`.
+#### 2. Install Dependencies
+We recommend creating a virtual environment first (e.g., using conda).
 
-  - Data: Please download test sets from Google Drive https://drive.google.com/drive/folders/1B2qBj8rD5apvxaWuBsjOeBStOa_bMQu9?usp=sharing, and place them in `./data`. 
+```bash
+# Example using conda
+conda create -n icam python=3.8
+conda activate icam
+
+# Install PyTorch (example for CUDA 11.7)
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
+
+# Install other dependencies
+pip install numpy==1.24.4
+pip install tqdm
+```
+
+#### 3. Train the Model
+ICAM is trained using reinforcement learning, and the random data generation method is demonstrated in three files, such as ICAM_TSP/TSProblemDef.py and ICAM_CVRP/CVRProblemDef.py.
+```bash
+# Example: Train the TSP model
+cd ICAM_TSP
+python tsp_train_vst_n100_to_n500.py
+
+# Example: Train the CVRP model
+cd ICAM_CVRP
+python cvrp_train_vst_n100_to_n500.py
+```
+
+#### 4. Inference
+You can use our provided pre-trained models or your own trained models to run the evaluation script and verify the method's performance. 
+
+Models: All pre-trained models are placed in `./pretrained`.
+
+Data: Please download test sets from Google Drive https://drive.google.com/drive/folders/1B2qBj8rD5apvxaWuBsjOeBStOa_bMQu9?usp=sharing, and place them in `./data`. 
+
+```bash
+# Example: Evaluate on TSPs
+cd ICAM_TSP
+python tsp_test_main.py  # Testing model performance on synthetic data
+python tsp_test_lib.py # Testing model performance on TSPLib
+
+# Example: Evaluate on CVRPs
+cd ICAM_CVRP
+python cvrp_test_main.py  # Testing model performance on synthetic data
+python cvrp_test_lib.py # Testing model performance on CVRPLib
+```
 
 ### Further Improvement
 
@@ -69,4 +113,5 @@ Thank them for their implementations.
 ## Copyright (c) 2025 CIAM Group
 
 **The code can only be used for non-commercial purposes. Please contact the authors if you want to use this code for business matters.**
+
 
