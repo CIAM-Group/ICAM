@@ -66,12 +66,12 @@ class ATSPTrainer:
 
         file_name_100 = f'../data/atsp/test_lkh3_atsp100_nums10000_seed1234_uniform.pt'
         self.saved_problems_100, self.optimal_score_100 = get_saved_data(file_name_100, 10000, self.device)
-        self.logger.info('Successfully load {0} TSP{1} instances, optimal: {2:.4f}'.format(
+        self.logger.info('Successfully load {0} ATSP{1} instances, optimal: {2:.4f}'.format(
             self.saved_problems_100.shape[0], self.saved_problems_100.shape[1], self.optimal_score_100))
 
         file_name_1000 = f'../data/atsp/test_lkh3_atsp1000_nums128_seed1234_uniform.pt'
         self.saved_problems_1000, self.optimal_score_1000 = get_saved_data(file_name_1000, 128, self.device)
-        self.logger.info('Successfully load {0} TSP{1} instances, optimal: {2:.4f}'.format(
+        self.logger.info('Successfully load {0} ATSP{1} instances, optimal: {2:.4f}'.format(
             self.saved_problems_1000.shape[0], self.saved_problems_1000.shape[1], self.optimal_score_1000))
 
     def run(self):
@@ -284,5 +284,6 @@ class ATSPTrainer:
                                            self.result_log, labels=[f'eval_{problem_size}'])
             util_save_log_image_with_label(image_prefix, self.trainer_params['logging']['log_image_params_1'],
                                            self.result_log, labels=[f'gap_{problem_size}'])
+
 
         return avg_score_eval, gap
