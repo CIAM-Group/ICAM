@@ -286,7 +286,7 @@ def adaptation_attention_free_module(q, k, v, adaptation_bias, ninf_mask=None):
 
     '''
     AAFM may have potential value overflow issues due to the exponential operation. 
-    If you want to further improve the numerical stability of AAFM, you can consider implementing the log-sum-exp trick or other techniques to prevent overflow.
+    If you want to further improve the numerical stability of AAFM in training, you can consider implementing the log-sum-exp trick or other techniques to prevent overflow.
     For example, you can compute the maximum value of K matrix and subtract it from the K before applying the exponential function. 
     This can help to prevent overflow while still maintaining the relative differences between the values.
     If you want to implement the log-sum-exp trick, you can refer to the following implementation:
@@ -365,3 +365,4 @@ class FeedForward(nn.Module):
 
 
         return self.W2(F.relu(self.W1(input1)))
+
