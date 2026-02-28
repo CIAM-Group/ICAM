@@ -317,6 +317,46 @@ def adaptation_attention_free_module(q, k, v, adaptation_bias, ninf_mask=None):
     out = torch.mul(sigmoid_q, weighted)
     # shape: (batch, n, embedding_dim)
 
+    '''
+    AAFM may have potential value overflow issues due to the exponential operation. 
+    If you want to further improve the numerical stability of AAFM in training, you can consider implementing the log-sum-exp trick or other techniques to prevent overflow.
+    For example, you can compute the maximum value of K matrix and subtract it from the K before applying the exponential function. 
+    This can help to prevent overflow while still maintaining the relative differences between the values.
+    If you want to implement the log-sum-exp trick, you can refer to the following implementation:
+    
+    sigmoid_q = torch.sigmoid(q)
+    # shape: (batch, n, embedding_dim)
+
+    if ninf_mask is not None:
+        adaptation_bias = adaptation_bias + ninf_mask
+
+    # stable exp(k) ---
+    k_max = torch.amax(k, dim=-2, keepdim=True)
+    # (batch, 1, embedding_dim)
+    exp_k = torch.exp(k - k_max)  # maximum value is exp(0) = 1, avoid overflow
+
+    exp_A = torch.exp(adaptation_bias)
+
+    bias = exp_A @ torch.mul(exp_k, v)
+    # shape: (batch, n, embedding_dim)
+    a_k = exp_A @ exp_k
+
+    if torch.isinf(bias).any() or torch.isnan(bias).any():
+        torch.nan_to_num_(bias)
+    if torch.isinf(a_k).any() or torch.isnan(a_k).any():
+        torch.nan_to_num_(a_k)
+
+    weighted = bias / (a_k + 1e-8)
+    # shape: (batch, n, embedding_dim)
+
+    if torch.isnan(weighted).any() or torch.isnan(weighted).any():
+        torch.nan_to_num_(weighted)
+    # shape: (batch, n, embedding_dim)
+
+    out = torch.mul(sigmoid_q, weighted)
+    # shape: (batch, n, embedding_dim)
+    '''
+
     return out
 
 
@@ -357,5 +397,6 @@ class FeedForward(nn.Module):
         # input.shape: (batch, problem, embedding)
 
         return self.W2(F.relu(self.W1(input1)))
+
 
 
