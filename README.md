@@ -1,4 +1,4 @@
-## ICAM (Instance-Conditioned Adaptation Model)
+## [IEEE TITS] ICAM (Instance-Conditioned Adaptation Model)
 
 
 This repository contains the code implementation of the paper [Instance-Conditioned Adaptation for Large-scale Generalization of Neural Routing Solver](https://arxiv.org/abs/2405.01906). In this paper, we propose a powerful RL-based constructive method called ICAM. When facing diverse geometric structures and patterns of instances across different scales, ICAM can effectively capture the instance-specific features (i.e., distance and scale) via the proposed instance-conditioned adaptation function. To make the model better aware of instance-specific information, we incorporate these features into the whole solution construction process (i.e., embedding, attention, and compatibility) via a powerful yet low-complexity instance-conditioned adaptation attention mechanism. Therefore, ICAM can directly generate promising solutions for instances across quite different scales, which improves the large-scale generalization performance for RL-based NCOs.
@@ -97,11 +97,12 @@ We have verified the legality of the corresponding solutions for each problem. W
 🤩🤩🤩 **If this repository is helpful for your research, please cite our paper:<br />**
 
 ```
-@article{zhou2024instance,
-  title={Instance-Conditioned Adaptation for Large-scale Generalization of Neural Routing Solver},
+@article{zhou2026instance,
+  title={Instance-Conditioned Adaptation for Large-Scale Generalization of Neural Routing Solver},
   author={Zhou, Changliang and Lin, Xi and Wang, Zhenkun and Tong, Xialiang and Yuan, Mingxuan and Zhang, Qingfu},
-  journal={arXiv preprint arXiv:2405.01906},
-  year={2024}
+  journal={IEEE Transactions on Intelligent Transportation Systems},
+  year={2026},
+  publisher={IEEE}
 }
 ```
 
@@ -110,7 +111,7 @@ The code implementation of ICAM is based on the code of [POMO](https://github.co
 Thank them for their implementations.
 
 
-## Copyright (c) 2025 CIAM Group
+## Copyright (c) 2026 CIAM Group
 
 **The code can only be used for non-commercial purposes. Please contact the authors if you want to use this code for business matters.**
 
