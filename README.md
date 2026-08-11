@@ -97,10 +97,13 @@ We have verified the legality of the corresponding solutions for each problem. W
 🤩🤩🤩 **If this repository is helpful for your research, please cite our paper:<br />**
 
 ```
-@article{zhou2026instance,
+@article{zhou2024icam,
   title={Instance-Conditioned Adaptation for Large-Scale Generalization of Neural Routing Solver},
   author={Zhou, Changliang and Lin, Xi and Wang, Zhenkun and Tong, Xialiang and Yuan, Mingxuan and Zhang, Qingfu},
   journal={IEEE Transactions on Intelligent Transportation Systems},
+  volume={27},
+  number={7},
+  pages={8270--8284},
   year={2026},
   publisher={IEEE}
 }
